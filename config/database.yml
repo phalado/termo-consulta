@@ -1,0 +1,29 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD", 'postgres') %>
+  host: <%= ENV.fetch("POSTGRES_HOST", 'db') %>
+  username: <%= ENV.fetch("POSTGRES_USER", 'postgres') %>
+
+development:
+  <<: *default
+  host: localhost
+  database: termo_consulta_development
+
+test:
+  <<: *default
+  host: localhost
+  database: termo_consulta_test
+
+staging:
+  <<: *default
+  database: termo_consulta_staging
+  username: termo_consulta
+  password: <%= ENV['TERMO_CONSULTA_DATABASE_PASSWORD'] %>
+
+production:
+  <<: *default
+  database: termo_consulta_production
+  username: termo_consulta
+  password: <%= ENV['TERMO_CONSULTA_DATABASE_PASSWORD'] %>

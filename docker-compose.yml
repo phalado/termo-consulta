@@ -1,0 +1,49 @@
+version: "3.5"
+
+services:
+  web:
+    container_name: termo-consulta
+    build: .
+    volumes:
+      - ".:/termo-consulta/"
+    links:
+      - db
+      - elasticsearch
+    environment:
+      PG_PASSWORD: postgres
+      ELASTICSEARCH_URL: http://elasticsearch:9200/
+    ports:
+      - "3000:3000"
+    expose:
+      - "3000"
+
+  elasticsearch:
+    container_name: termo-consulta-el
+    image: elasticsearch:7.2.0
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.2.0
+    container_name: termo-consulta-kibana
+    environment:
+      SERVER_NAME: localhost
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+      ELASTICSEARCH_URL: http://elasticsearch:9200/
+    ports:
+      - 5601:5601
+    volumes:
+      - ./docker_data/elasticsearch/data:/usr/share/elasticsearch/data
+
+  db:
+    container_name: termo-consulta-db
+    image: postgres:13.1
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"

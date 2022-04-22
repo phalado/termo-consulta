@@ -1,0 +1,54 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/phalado/Projects/Personal/termo-consulta/app/models/word.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          24,
+          null,
+          4,
+          null,
+          null,
+          1,
+          null,
+          1,
+          20,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          20,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/phalado/Projects/Personal/termo-consulta/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1650562065
+  }
+}

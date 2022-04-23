@@ -1,0 +1,23 @@
+AllCops:
+  Exclude:
+    - "db/**/*"
+    - "bin/*"
+    - "config/**/*"
+    - "Guardfile"
+    - "Rakefile"
+    - "README.md"
+    - "node_modules/**/*"
+  TargetRubyVersion: 3.0.2
+  NewCops: enable
+  SuggestExtensions: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+Metrics/CyclomaticComplexity:
+  Max: 8
+Metrics/ParameterLists:
+  Exclude:
+    - "app/models/word.rb"

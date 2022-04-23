@@ -1,19 +1,69 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/phalado/Projects/Personal/termo-consulta/app/models/word.rb": {
+      "/termo-consulta/app/models/word.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
           1,
           null,
           1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          3,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           1,
           24,
           null,
           4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
           null,
           null,
           1,
@@ -41,14 +91,16 @@
           null
         ]
       },
-      "/home/phalado/Projects/Personal/termo-consulta/app/models/application_record.rb": {
+      "/termo-consulta/app/models/application_record.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1650562065
+    "timestamp": 1650754813
   }
 }

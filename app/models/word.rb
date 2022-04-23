@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Word < ApplicationRecord
   validates_presence_of :word
   validates_uniqueness_of :word
@@ -10,16 +12,17 @@ class Word < ApplicationRecord
   def search_data
     {
       word: word,
+      letters: letters,
       l_one: l_one,
       l_two: l_two,
       l_three: l_three,
       l_four: l_four,
-      l_five: l_five,
+      l_five: l_five
     }
   end
 
   def save_letters
-    letters = self.word.split('').map { |letter| validate_letter(letter) }
+    letters = word.chars.map { |letter| validate_letter(letter) }
 
     self.letters = letters
   end
@@ -44,8 +47,10 @@ class Word < ApplicationRecord
     letters[4]
   end
 
-  def self.fetch(l_one, l_two, l_three, l_four, l_five)
+  def self.fetch(search_letters, l_one, l_two, l_three, l_four, l_five)
     search_filters = {}
+
+    search_letters.each { |letter| search_filters.merge!({ letters: letter }) } unless search_letters.empty?
 
     search_filters.merge!({ l_one: l_one }) unless l_one.nil?
     search_filters.merge!({ l_two: l_two }) unless l_two.nil?
@@ -53,29 +58,29 @@ class Word < ApplicationRecord
     search_filters.merge!({ l_four: l_four }) unless l_four.nil?
     search_filters.merge!({ l_five: l_five }) unless l_five.nil?
 
-    Word.search '*', where: search_filters
+    Word.search '*', where: search_filters, order: { word: :asc }
   end
 
   private
 
   def validate_letter(letter)
     case letter
-    when 'á', 'à', 'ã', 'â',  'ä'
-      return 'a'
+    when 'á', 'à', 'ã', 'â', 'ä'
+      'a'
     when 'é', 'è', 'ẽ', 'ê', 'ë'
-      return 'e'
+      'e'
     when 'í', 'ì', 'ĩ', 'î', 'ï'
-      return 'i'
+      'i'
     when 'ó', 'ò', 'õ', 'ô', 'ö'
-      return 'o'
+      'o'
     when 'ú', 'ù', 'ũ', 'û', 'ü'
-      return 'u'
+      'u'
     when 'ç'
-      return 'c'
+      'c'
     when 'ñ'
-      return 'n'
+      'n'
     else
-      return letter
+      letter
     end
   end
 end

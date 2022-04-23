@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class LoadFile
   def initialize(file)
     p file
-    file.each {|line| p line}
+    file.each { |line| p line }
     @file = file
     p @file
   end

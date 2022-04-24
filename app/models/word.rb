@@ -47,10 +47,11 @@ class Word < ApplicationRecord
     letters[4]
   end
 
-  def self.fetch(search_letters, l_one, l_two, l_three, l_four, l_five)
+  def self.fetch(search_letters, remove_letters, l_one, l_two, l_three, l_four, l_five)
     search_filters = {}
 
-    search_letters.each { |letter| search_filters.merge!({ letters: letter }) } unless search_letters.empty?
+    search_filters.merge!({ letters: { all: search_letters } }) unless search_letters.empty?
+    remove_letters.each { |letter| search_filters.merge!({ _not: { letters: letter } }) } unless remove_letters.empty?
 
     search_filters.merge!({ l_one: l_one }) unless l_one.nil?
     search_filters.merge!({ l_two: l_two }) unless l_two.nil?

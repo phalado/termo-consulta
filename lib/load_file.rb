@@ -6,7 +6,6 @@ class LoadFile
   end
 
   def parse
-    p "I'm here"
     ("a".."z").each do |l|
       path = "lib/word_list_#{l}.txt"
       load_file(path)

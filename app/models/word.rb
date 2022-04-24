@@ -53,11 +53,11 @@ class Word < ApplicationRecord
     search_filters.merge!({ letters: { all: search_letters } }) unless search_letters.empty?
     search_filters.merge!({ _not: { letters: remove_letters } }) unless remove_letters.empty?
 
-    search_filters.merge!({ l_one: l_one }) unless l_one.nil?
-    search_filters.merge!({ l_two: l_two }) unless l_two.nil?
-    search_filters.merge!({ l_three: l_three }) unless l_three.nil?
-    search_filters.merge!({ l_four: l_four }) unless l_four.nil?
-    search_filters.merge!({ l_five: l_five }) unless l_five.nil?
+    search_filters.merge!({ l_one: l_one }) unless l_one.nil? || l_one.empty?
+    search_filters.merge!({ l_two: l_two }) unless l_two.nil? || l_two.empty?
+    search_filters.merge!({ l_three: l_three }) unless l_three.nil? || l_three.empty?
+    search_filters.merge!({ l_four: l_four }) unless l_four.nil? || l_four.empty?
+    search_filters.merge!({ l_five: l_five }) unless l_five.nil? || l_five.empty?
 
     Word.search '*', where: search_filters, order: { word: :asc }
   end

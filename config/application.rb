@@ -41,5 +41,16 @@ module TermoConsulta
     config.autoload_paths << Rails.root.join('lib/**/*.rb')
     config.eager_load_paths << Rails.root.join('lib')
     config.eager_load_paths << Rails.root.join('lib/**/*.rb')
+
+    config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
+      allow do
+        origins '*'
+        resource(
+          '*',
+          headers: :any,
+          methods: [:get, :patch, :put, :delete, :post, :options]
+          )
+      end
+    end
   end
 end

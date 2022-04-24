@@ -22,7 +22,7 @@ class Word < ApplicationRecord
   end
 
   def save_letters
-    letters = word.chars.map { |letter| validate_letter(letter) }
+    letters = word.chars.map { |letter| validate_letter(letter.downcase) }
 
     self.letters = letters
   end
@@ -51,7 +51,7 @@ class Word < ApplicationRecord
     search_filters = {}
 
     search_filters.merge!({ letters: { all: search_letters } }) unless search_letters.empty?
-    remove_letters.each { |letter| search_filters.merge!({ _not: { letters: letter } }) } unless remove_letters.empty?
+    search_filters.merge!({ _not: { letters: remove_letters } }) unless remove_letters.empty?
 
     search_filters.merge!({ l_one: l_one }) unless l_one.nil?
     search_filters.merge!({ l_two: l_two }) unless l_two.nil?

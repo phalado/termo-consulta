@@ -3,7 +3,7 @@
 This web app is a helper to solve the Brazilian version of [Wordle](wordle): [Termo](termo).
 This application currently consists of 5993 words. If you believe any word is missing, please send me a message.
 
-<h1 align="center"><img src=""></h1>
+<h1 align="center"><img src="https://raw.githack.com/phalado/termo-consulta/main/public/initial.png"></h1>
 
 ## Table of contents
 
@@ -41,7 +41,23 @@ You have 3 possibilities:
 
   ![green_letter][green_letter]
 
-  After this, it won't be possible to click on this specific letter and it will become green on the digital keyboard on the screen.
+  After this, it won't be possible to click on this specific letter, and it will become green on the digital keyboard on the screen.
+
+- Click on one of the letters on the digital keyboard
+
+  Do it if you know that the answer has this letter, but you aren't sure of its position.
+
+  ![yellow_letter][yellow_letter]
+
+  After clicking on it, it will become yellow.
+
+- Double click on one of the letters on the digital keyboard
+
+  Do it if you know that the answer does not have this letter.
+
+  ![red_letter][red_letter]
+
+  After double-clicking on it, it will become red.
 
 ### Technologies used
 
@@ -82,7 +98,7 @@ Follow me on [Twitter][rapha-twitter], visit my [Github portfolio][rapha-github]
 
 <!-- Images -->
 
-[one_word]: https://
-[green_letter]: https://raw.githubusercontent.com/phalado/final-capstone/develop/public/contents/signup-print.png
-[yellow_letter]: https://raw.githubusercontent.com/phalado/final-capstone/develop/public/contents/signup-print.png
-[red_letter]: https://raw.githubusercontent.com/phalado/final-capstone/develop/public/contents/signup-print.png
+[one_word]: https://raw.githack.com/phalado/termo-consulta/main/public/one_word.png
+[green_letter]: https://raw.githack.com/phalado/termo-consulta/main/public/green_a.png
+[yellow_letter]: https://raw.githack.com/phalado/termo-consulta/main/public/yellow_a.png
+[red_letter]: https://raw.githack.com/phalado/termo-consulta/main/public/red_a.png

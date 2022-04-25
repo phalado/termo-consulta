@@ -14,10 +14,21 @@ AllCops:
 Style/Documentation:
   Enabled: false
 
+Metrics/AbcSize:
+  Exclude:
+    - "app/models/word.rb"
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
 Metrics/MethodLength:
   Max: 20
 Metrics/CyclomaticComplexity:
   Max: 8
+  Exclude:
+    - "app/models/word.rb"
+Metrics/PerceivedComplexity:
+  Exclude:
+    - "app/models/word.rb"
 Metrics/ParameterLists:
   Exclude:
     - "app/models/word.rb"

@@ -10,9 +10,9 @@ gem 'factory_bot_rails'
 gem 'faker'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
+gem 'rack-cors'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
 gem 'searchkick'
-gem 'rack-cors'
 
 group :development, :test do
   gem 'guard-rspec'

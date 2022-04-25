@@ -13,7 +13,6 @@ module Api
         result = Word.fetch(
           search_array, remove_array, params[:l_one], params[:l_two], params[:l_three], params[:l_four], params[:l_five]
         )
-        p result
         render json: { count: result.size, result: result.map(&:word) }, status: :ok
       end
 

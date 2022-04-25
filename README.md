@@ -1,24 +1,88 @@
-# README
+# Termo Solver
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This web app is a helper to solve the Brazilian version of [Wordle](wordle): [Termo](termo).
+This application currently consists of 5993 words. If you believe any word is missing, please send me a message.
 
-Things you may want to cover:
+<h1 align="center"><img src=""></h1>
 
-* Ruby version
+## Table of contents
 
-* System dependencies
+- [Termo Solver](#termo-solver)
+  - [Table of contents](#table-of-contents)
+  - [About](#about)
+  - [The project](#the-project)
+    - [How to use it](#how-to-use-it)
+    - [Technologies used](#technologies-used)
+  - [Contact](#contact)
 
-* Configuration
+## About
 
-* Database creation
+Link to the live version [here][live-version].
 
-* Database initialization
+Repository: https://github.com/phalado/termo-consulta
 
-* How to run the test suite
+Front-End repository: https://github.com/phalado/termo-consulta-front
 
-* Services (job queues, cache servers, search engines, etc.)
+Please, star the projects. It makes me happy.
 
-* Deployment instructions
+## The project
 
-* ...
+### How to use it
+
+This application won't solve the puzzle for you. You still have to deduct the next steps. It only shows you the possible words for the answer.
+
+![one_word][one_word]
+
+You have 3 possibilities:
+
+- Fill one of the top squares with a letter
+
+  Do it if you know the correct position of any letter. This will hugely decrease the number of remaining possibilities.
+
+  ![green_letter][green_letter]
+
+  After this, it won't be possible to click on this specific letter and it will become green on the digital keyboard on the screen.
+
+### Technologies used
+
+To create this project I used:
+
+- Ruby
+- Ruby on Rails
+- Searchkick
+- Rspec
+- Faker
+- FactoryBot
+- Simplecov
+- JavaScript
+- A bit of HTML and CSS
+- Rubocop
+- React
+- Redux
+- Github
+- Netlify for Front-End
+- Heroku for Back-End
+
+## Contact
+
+Author: Raphael Cordeiro
+
+Follow me on [Twitter][rapha-twitter], visit my [Github portfolio][rapha-github], my [Linkedin][rapha-linkedin], or my [personal portfolio][rapha-personal].
+
+<!-- Links -->
+
+[wordle]: https://www.nytimes.com/games/wordle/index.html
+[termo]: https://term.ooo/
+[live-version]: https://termo-solver.netlify.app/
+[front-end]: https://github.com/phalado/termo-consulta-front
+[rapha-github]: https://github.com/phalado
+[rapha-twitter]: https://twitter.com/phalado
+[rapha-linkedin]: https://www.linkedin.com/in/raphael-cordeiro/
+[rapha-personal]: https://www.phalado.tech/
+
+<!-- Images -->
+
+[one_word]: https://
+[green_letter]: https://raw.githubusercontent.com/phalado/final-capstone/develop/public/contents/signup-print.png
+[yellow_letter]: https://raw.githubusercontent.com/phalado/final-capstone/develop/public/contents/signup-print.png
+[red_letter]: https://raw.githubusercontent.com/phalado/final-capstone/develop/public/contents/signup-print.png

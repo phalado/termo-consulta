@@ -7,13 +7,16 @@ class LoadFile
     #   load_file(path)
     # end
 
+    p 'ok'
     load_file("lib/palavras.txt")
   end
 
   def load_file(path)
     file = File.open(path, 'r')
     file.each do |line|
-      Word.new(word: line.split("\n").first).save if line.length == 5
+      word = line.split("\n").first
+      puts word, word.length, word.length == 5
+      Word.new(word: word).save if word.length == 5
     end
   end
 end

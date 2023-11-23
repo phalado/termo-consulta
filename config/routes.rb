@@ -5,6 +5,10 @@ Rails.application.routes.draw do
       resources :words, only: :create do
         get :locate, on: :collection
       end
+
+      resources :month_tests do
+        get :parse_month, on: :collection
+      end
     end
   end
 end

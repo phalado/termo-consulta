@@ -48,5 +48,5 @@ RSpec.configure do |config|
 
   config.around(:each) { |example| DatabaseCleaner.cleaning { example.run } }
 
-  # config.before(:each) { Word.reindex }
+  config.before(:each) { Word.reindex }
 end

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
         get :locate, on: :collection
       end
 
-      resources :month_tests do
+      resources :month_tests, only: :index do
         get :parse_month, on: :collection
       end
     end
